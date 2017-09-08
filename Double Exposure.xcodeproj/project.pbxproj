@@ -1,0 +1,537 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		276719541F63051600C2F934 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276719531F63051600C2F934 /* AppDelegate.swift */; };
+		276719561F63051600C2F934 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276719551F63051600C2F934 /* ViewController.swift */; };
+		276719591F63051600C2F934 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 276719571F63051600C2F934 /* Main.storyboard */; };
+		2767195B1F63051600C2F934 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2767195A1F63051600C2F934 /* Assets.xcassets */; };
+		2767195E1F63051600C2F934 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2767195C1F63051600C2F934 /* LaunchScreen.storyboard */; };
+		276719691F63051600C2F934 /* Double_ExposureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276719681F63051600C2F934 /* Double_ExposureTests.swift */; };
+		276719741F63051600C2F934 /* Double_ExposureUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276719731F63051600C2F934 /* Double_ExposureUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		276719651F63051600C2F934 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 276719481F63051600C2F934 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2767194F1F63051600C2F934;
+			remoteInfo = "Double Exposure";
+		};
+		276719701F63051600C2F934 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 276719481F63051600C2F934 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2767194F1F63051600C2F934;
+			remoteInfo = "Double Exposure";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		276719501F63051600C2F934 /* Double Exposure.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Double Exposure.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		276719531F63051600C2F934 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		276719551F63051600C2F934 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		276719581F63051600C2F934 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		2767195A1F63051600C2F934 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		2767195D1F63051600C2F934 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		2767195F1F63051600C2F934 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		276719641F63051600C2F934 /* Double ExposureTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Double ExposureTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		276719681F63051600C2F934 /* Double_ExposureTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Double_ExposureTests.swift; sourceTree = "<group>"; };
+		2767196A1F63051600C2F934 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2767196F1F63051600C2F934 /* Double ExposureUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Double ExposureUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		276719731F63051600C2F934 /* Double_ExposureUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Double_ExposureUITests.swift; sourceTree = "<group>"; };
+		276719751F63051600C2F934 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2767194D1F63051600C2F934 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		276719611F63051600C2F934 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2767196C1F63051600C2F934 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		276719471F63051600C2F934 = {
+			isa = PBXGroup;
+			children = (
+				276719521F63051600C2F934 /* Double Exposure */,
+				276719671F63051600C2F934 /* Double ExposureTests */,
+				276719721F63051600C2F934 /* Double ExposureUITests */,
+				276719511F63051600C2F934 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		276719511F63051600C2F934 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				276719501F63051600C2F934 /* Double Exposure.app */,
+				276719641F63051600C2F934 /* Double ExposureTests.xctest */,
+				2767196F1F63051600C2F934 /* Double ExposureUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		276719521F63051600C2F934 /* Double Exposure */ = {
+			isa = PBXGroup;
+			children = (
+				276719531F63051600C2F934 /* AppDelegate.swift */,
+				276719551F63051600C2F934 /* ViewController.swift */,
+				276719571F63051600C2F934 /* Main.storyboard */,
+				2767195A1F63051600C2F934 /* Assets.xcassets */,
+				2767195C1F63051600C2F934 /* LaunchScreen.storyboard */,
+				2767195F1F63051600C2F934 /* Info.plist */,
+			);
+			path = "Double Exposure";
+			sourceTree = "<group>";
+		};
+		276719671F63051600C2F934 /* Double ExposureTests */ = {
+			isa = PBXGroup;
+			children = (
+				276719681F63051600C2F934 /* Double_ExposureTests.swift */,
+				2767196A1F63051600C2F934 /* Info.plist */,
+			);
+			path = "Double ExposureTests";
+			sourceTree = "<group>";
+		};
+		276719721F63051600C2F934 /* Double ExposureUITests */ = {
+			isa = PBXGroup;
+			children = (
+				276719731F63051600C2F934 /* Double_ExposureUITests.swift */,
+				276719751F63051600C2F934 /* Info.plist */,
+			);
+			path = "Double ExposureUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2767194F1F63051600C2F934 /* Double Exposure */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 276719781F63051700C2F934 /* Build configuration list for PBXNativeTarget "Double Exposure" */;
+			buildPhases = (
+				2767194C1F63051600C2F934 /* Sources */,
+				2767194D1F63051600C2F934 /* Frameworks */,
+				2767194E1F63051600C2F934 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Double Exposure";
+			productName = "Double Exposure";
+			productReference = 276719501F63051600C2F934 /* Double Exposure.app */;
+			productType = "com.apple.product-type.application";
+		};
+		276719631F63051600C2F934 /* Double ExposureTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2767197B1F63051700C2F934 /* Build configuration list for PBXNativeTarget "Double ExposureTests" */;
+			buildPhases = (
+				276719601F63051600C2F934 /* Sources */,
+				276719611F63051600C2F934 /* Frameworks */,
+				276719621F63051600C2F934 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				276719661F63051600C2F934 /* PBXTargetDependency */,
+			);
+			name = "Double ExposureTests";
+			productName = "Double ExposureTests";
+			productReference = 276719641F63051600C2F934 /* Double ExposureTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		2767196E1F63051600C2F934 /* Double ExposureUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2767197E1F63051700C2F934 /* Build configuration list for PBXNativeTarget "Double ExposureUITests" */;
+			buildPhases = (
+				2767196B1F63051600C2F934 /* Sources */,
+				2767196C1F63051600C2F934 /* Frameworks */,
+				2767196D1F63051600C2F934 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				276719711F63051600C2F934 /* PBXTargetDependency */,
+			);
+			name = "Double ExposureUITests";
+			productName = "Double ExposureUITests";
+			productReference = 2767196F1F63051600C2F934 /* Double ExposureUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		276719481F63051600C2F934 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = "Mike Cohen";
+				TargetAttributes = {
+					2767194F1F63051600C2F934 = {
+						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = MJQW94A385;
+						ProvisioningStyle = Automatic;
+					};
+					276719631F63051600C2F934 = {
+						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = MJQW94A385;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 2767194F1F63051600C2F934;
+					};
+					2767196E1F63051600C2F934 = {
+						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = MJQW94A385;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 2767194F1F63051600C2F934;
+					};
+				};
+			};
+			buildConfigurationList = 2767194B1F63051600C2F934 /* Build configuration list for PBXProject "Double Exposure" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 276719471F63051600C2F934;
+			productRefGroup = 276719511F63051600C2F934 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2767194F1F63051600C2F934 /* Double Exposure */,
+				276719631F63051600C2F934 /* Double ExposureTests */,
+				2767196E1F63051600C2F934 /* Double ExposureUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2767194E1F63051600C2F934 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2767195E1F63051600C2F934 /* LaunchScreen.storyboard in Resources */,
+				2767195B1F63051600C2F934 /* Assets.xcassets in Resources */,
+				276719591F63051600C2F934 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		276719621F63051600C2F934 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2767196D1F63051600C2F934 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2767194C1F63051600C2F934 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				276719561F63051600C2F934 /* ViewController.swift in Sources */,
+				276719541F63051600C2F934 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		276719601F63051600C2F934 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				276719691F63051600C2F934 /* Double_ExposureTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2767196B1F63051600C2F934 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				276719741F63051600C2F934 /* Double_ExposureUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		276719661F63051600C2F934 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2767194F1F63051600C2F934 /* Double Exposure */;
+			targetProxy = 276719651F63051600C2F934 /* PBXContainerItemProxy */;
+		};
+		276719711F63051600C2F934 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2767194F1F63051600C2F934 /* Double Exposure */;
+			targetProxy = 276719701F63051600C2F934 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		276719571F63051600C2F934 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				276719581F63051600C2F934 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		2767195C1F63051600C2F934 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2767195D1F63051600C2F934 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		276719761F63051700C2F934 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		276719771F63051700C2F934 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		276719791F63051700C2F934 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = MJQW94A385;
+				INFOPLIST_FILE = "Double Exposure/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.mcdevzone.Double-Exposure";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		2767197A1F63051700C2F934 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = MJQW94A385;
+				INFOPLIST_FILE = "Double Exposure/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.mcdevzone.Double-Exposure";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		2767197C1F63051700C2F934 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = MJQW94A385;
+				INFOPLIST_FILE = "Double ExposureTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.mcdevzone.Double-ExposureTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Double Exposure.app/Double Exposure";
+			};
+			name = Debug;
+		};
+		2767197D1F63051700C2F934 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = MJQW94A385;
+				INFOPLIST_FILE = "Double ExposureTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.mcdevzone.Double-ExposureTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Double Exposure.app/Double Exposure";
+			};
+			name = Release;
+		};
+		2767197F1F63051700C2F934 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = MJQW94A385;
+				INFOPLIST_FILE = "Double ExposureUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.mcdevzone.Double-ExposureUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = "Double Exposure";
+			};
+			name = Debug;
+		};
+		276719801F63051700C2F934 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = MJQW94A385;
+				INFOPLIST_FILE = "Double ExposureUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.mcdevzone.Double-ExposureUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = "Double Exposure";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2767194B1F63051600C2F934 /* Build configuration list for PBXProject "Double Exposure" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				276719761F63051700C2F934 /* Debug */,
+				276719771F63051700C2F934 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		276719781F63051700C2F934 /* Build configuration list for PBXNativeTarget "Double Exposure" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				276719791F63051700C2F934 /* Debug */,
+				2767197A1F63051700C2F934 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		2767197B1F63051700C2F934 /* Build configuration list for PBXNativeTarget "Double ExposureTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2767197C1F63051700C2F934 /* Debug */,
+				2767197D1F63051700C2F934 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		2767197E1F63051700C2F934 /* Build configuration list for PBXNativeTarget "Double ExposureUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2767197F1F63051700C2F934 /* Debug */,
+				276719801F63051700C2F934 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 276719481F63051600C2F934 /* Project object */;
+}
