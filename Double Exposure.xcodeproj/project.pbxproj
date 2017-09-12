@@ -14,6 +14,8 @@
 		2767195E1F63051600C2F934 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2767195C1F63051600C2F934 /* LaunchScreen.storyboard */; };
 		276719691F63051600C2F934 /* Double_ExposureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276719681F63051600C2F934 /* Double_ExposureTests.swift */; };
 		276719741F63051600C2F934 /* Double_ExposureUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276719731F63051600C2F934 /* Double_ExposureUITests.swift */; };
+		276719841F63059C00C2F934 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 276719821F63059C00C2F934 /* AssetsLibrary.framework */; };
+		276719851F63059C00C2F934 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 276719831F63059C00C2F934 /* AVFoundation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +49,8 @@
 		2767196F1F63051600C2F934 /* Double ExposureUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Double ExposureUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		276719731F63051600C2F934 /* Double_ExposureUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Double_ExposureUITests.swift; sourceTree = "<group>"; };
 		276719751F63051600C2F934 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		276719821F63059C00C2F934 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
+		276719831F63059C00C2F934 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +58,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				276719841F63059C00C2F934 /* AssetsLibrary.framework in Frameworks */,
+				276719851F63059C00C2F934 /* AVFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,6 +87,7 @@
 				276719671F63051600C2F934 /* Double ExposureTests */,
 				276719721F63051600C2F934 /* Double ExposureUITests */,
 				276719511F63051600C2F934 /* Products */,
+				276719811F63059B00C2F934 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -123,6 +130,15 @@
 				276719751F63051600C2F934 /* Info.plist */,
 			);
 			path = "Double ExposureUITests";
+			sourceTree = "<group>";
+		};
+		276719811F63059B00C2F934 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				276719821F63059C00C2F934 /* AssetsLibrary.framework */,
+				276719831F63059C00C2F934 /* AVFoundation.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -359,7 +375,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -403,7 +419,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -514,6 +530,7 @@
 				2767197A1F63051700C2F934 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2767197B1F63051700C2F934 /* Build configuration list for PBXNativeTarget "Double ExposureTests" */ = {
 			isa = XCConfigurationList;
@@ -522,6 +539,7 @@
 				2767197D1F63051700C2F934 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2767197E1F63051700C2F934 /* Build configuration list for PBXNativeTarget "Double ExposureUITests" */ = {
 			isa = XCConfigurationList;
@@ -530,6 +548,7 @@
 				276719801F63051700C2F934 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
