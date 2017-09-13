@@ -9,7 +9,9 @@
 import UIKit
 import Photos
 
-class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class ViewController: UIViewController,
+                        UIImagePickerControllerDelegate, UINavigationControllerDelegate,
+                        UICollectionViewDelegate, UICollectionViewDataSource {
     var leftImage: UIImage?
     var rightImage: UIImage?
     
@@ -17,6 +19,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     @IBOutlet weak var imageView: UIImageView?
 
+    @IBOutlet weak var collectionView: UICollectionView?
+    
     @IBOutlet weak var leftButton: UIButton?
     @IBOutlet weak var rightButton: UIButton?
     
@@ -42,6 +46,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         // Dispose of any resources that can be recreated.
     }
 
+    // image picker delegate
     func imagePickerController(_ picker: UIImagePickerController,
                                didFinishPickingMediaWithInfo info: [String : Any]) {
         
@@ -68,6 +73,28 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         }
     }
     
+    // collection view delegate
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        // TODO: handle selection
+    }
+    
+    // collection view data source
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 1;
+    }
+    
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 1;
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath)
+        // TODO: configure cell
+        return cell
+    }
+
     func composeImage() {
         if (leftImage != nil) && (rightImage == nil) {
             imageView?.image = leftImage
