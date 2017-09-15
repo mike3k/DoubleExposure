@@ -66,7 +66,7 @@ class ViewController: UIViewController,
                             self.rightImage = UIImage(data: data)
                             self.rightButton?.imageView?.image = self.rightImage
                         }
-                        self.composeImage()
+                        self.imageView?.image = ImageComposer.instance.compose(self.leftImage,self.rightImage)
                     }
                 }
             })
@@ -95,29 +95,5 @@ class ViewController: UIViewController,
         return cell
     }
 
-    func composeImage() {
-        if (leftImage != nil) && (rightImage == nil) {
-            imageView?.image = leftImage
-        } else if (rightImage != nil) && (leftImage == nil) {
-            imageView?.image = rightImage
-        } else {
-            imageView?.image = blendImage(leftImage!, rightImage!)
-        }
-    }
-    
-    func blendImage(_ image1 : UIImage, _ image2 : UIImage) -> UIImage {
-        let newSize = image1.size
-        UIGraphicsBeginImageContext( newSize )
-        
-        image1.draw(in: CGRect(x:0,y:0,width:newSize.width,height:newSize.height))
-        
-        image2.draw(in: CGRect(x:0,y:0,width:newSize.width,height:newSize.height),
-                    blendMode:CGBlendMode.normal, alpha:0.5)
-        
-        let newImage:UIImage = UIGraphicsGetImageFromCurrentImageContext()!
-        UIGraphicsEndImageContext();
-        
-        return newImage
-    }
 }
 
