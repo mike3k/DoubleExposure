@@ -26,6 +26,11 @@ class ViewController: UIViewController,
     
     var buttonPressed: UIButton?
     
+    let effectList: [ImageEffect] = [ImageEffect(name: "Normal",mode: CGBlendMode.normal,alpha: 0.5),
+                                     ImageEffect(name: "Overlay",mode: CGBlendMode.overlay,alpha: 0.5),
+                                     ImageEffect(name: "Darken",mode: CGBlendMode.darken,alpha: 0.5),
+                                     ImageEffect(name: "Lighten",mode: CGBlendMode.lighten,alpha: 0.5)]
+    
     @IBAction public func tappedButton(_ button: UIButton) {
         buttonPressed = button
         let picker = UIImagePickerController()
@@ -39,6 +44,15 @@ class ViewController: UIViewController,
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        NotificationCenter.default.addObserver(forName: NSNotification.Name("mode-changed"), object: nil, queue: nil) { (n) in
+                self.updateImage()
+        }
+        
+        NotificationCenter.default.addObserver(forName: NSNotification.Name("alpha-changed"), object: nil, queue: nil) { (n) in
+                self.updateImage()
+        }
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -46,6 +60,10 @@ class ViewController: UIViewController,
         // Dispose of any resources that can be recreated.
     }
 
+    func updateImage() -> Void {
+        self.imageView?.image = ImageComposer.instance.compose(self.leftImage,self.rightImage)
+    }
+    
     // image picker delegate
     func imagePickerController(_ picker: UIImagePickerController,
                                didFinishPickingMediaWithInfo info: [String : Any]) {
@@ -66,7 +84,7 @@ class ViewController: UIViewController,
                             self.rightImage = UIImage(data: data)
                             self.rightButton?.imageView?.image = self.rightImage
                         }
-                        self.imageView?.image = ImageComposer.instance.compose(self.leftImage,self.rightImage)
+                        self.updateImage()
                     }
                 }
             })
@@ -77,12 +95,14 @@ class ViewController: UIViewController,
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         // TODO: handle selection
+        let effect = effectList[indexPath.row];
+        ImageComposer.instance.setImageEffect(effect)
     }
     
     // collection view data source
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 1;
+        return effectList.count;
     }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -92,6 +112,7 @@ class ViewController: UIViewController,
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath)
         // TODO: configure cell
+        cell.backgroundColor = UIColor.white
         return cell
     }
 

@@ -11,12 +11,30 @@ import UIKit
 class ImageComposer: NSObject {
     static let instance = ImageComposer();
     
-    var mode = CGBlendMode.normal
-    var alpha: CGFloat = 0.5
+    var mode = CGBlendMode.normal {
+        didSet {
+            if (mode != oldValue) {
+                // notify of changed value
+                NotificationCenter.default.post(name: NSNotification.Name("mode-changed"), object: mode)
+            }
+        }
+    }
     
-    func compose(_ image1 : UIImage?, _ image2 : UIImage?,
-                 mode: CGBlendMode = .normal,
-                 alpha : CGFloat = 0.5) -> UIImage? {
+    var alpha: CGFloat = 0.5 {
+        didSet {
+            if (alpha != oldValue){
+                // notify of changed value
+                NotificationCenter.default.post(name: NSNotification.Name("alpha-changed"), object: alpha)
+            }
+        }
+    }
+    
+    func setImageEffect(_ effect : ImageEffect) -> Void {
+        self.mode = effect.mode
+        self.alpha = effect.alpha
+    }
+    
+    func compose(_ image1 : UIImage?, _ image2 : UIImage?) -> UIImage? {
         if (image1 != nil) && (image2 == nil) {
             return image1
         } else if (image2 != nil) && (image1 == nil) {
@@ -26,8 +44,8 @@ class ImageComposer: NSObject {
         }
     }
     
-    func blend(_ image1 : UIImage,
-               _ image2 : UIImage) -> UIImage {
+    func blend(_ image1 : UIImage, _ image2 : UIImage) -> UIImage {
+        
         let newSize = image1.size
         UIGraphicsBeginImageContext( newSize )
         
