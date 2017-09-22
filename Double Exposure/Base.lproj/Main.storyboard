@@ -81,7 +81,6 @@
                                     </collectionViewCell>
                                 </cells>
                                 <connections>
-                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="9NR-ss-xwm"/>
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="mc1-Cp-S24"/>
                                 </connections>
                             </collectionView>
@@ -104,6 +103,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="collectionView" destination="4F8-vi-xLW" id="hCd-Ob-hNe"/>
                         <outlet property="imageView" destination="mUj-LU-lrZ" id="9EZ-kp-f84"/>
                         <outlet property="leftButton" destination="uyf-7a-p6W" id="6nU-tR-Rmx"/>
                         <outlet property="rightButton" destination="rDz-to-CRD" id="3sU-wx-wqd"/>
