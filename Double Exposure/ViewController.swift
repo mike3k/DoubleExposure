@@ -30,11 +30,16 @@ class ViewController: UIViewController,
         
     @IBAction public func tappedButton(_ button: UIButton) {
         buttonPressed = button
-        let picker = UIImagePickerController()
-        picker.delegate = self
-        picker.sourceType = UIImagePickerControllerSourceType.photoLibrary
         
-        present(picker, animated: true, completion:nil)
+        PHPhotoLibrary.requestAuthorization { (auth) in
+            if (auth == PHAuthorizationStatus.authorized) {
+                let picker = UIImagePickerController()
+                picker.delegate = self
+                picker.sourceType = UIImagePickerControllerSourceType.photoLibrary
+                
+                self.present(picker, animated: true, completion:nil)
+           }
+        }
         
     }
 
@@ -83,10 +88,10 @@ class ViewController: UIViewController,
             }
             if (self.buttonPressed === self.leftButton) {
                 self.leftImage = UIImage(data: data)
-                self.leftButton?.imageView?.image = self.leftImage
+                self.leftButton?.setImage(self.leftImage, for: UIControlState.normal)
             } else {
                 self.rightImage = UIImage(data: data)
-                self.rightButton?.imageView?.image = self.rightImage
+                self.rightButton?.setImage(self.rightImage, for: UIControlState.normal)
             }
             self.updateImage()
             

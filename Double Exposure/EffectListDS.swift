@@ -26,9 +26,12 @@ class EffectListDS: NSObject, UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! EffectCell
         // TODO: configure cell
+        let effect = effects[indexPath.row]
         cell.backgroundColor = UIColor.white
+        cell.label?.text = effect.name
+        cell.imageView?.image = UIImage.init(named: effect.name)
         return cell
     }
 

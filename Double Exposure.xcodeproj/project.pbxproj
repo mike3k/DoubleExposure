@@ -10,6 +10,7 @@
 		2703EF9A1F6A085A004FA25E /* ImageComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2703EF991F6A085A004FA25E /* ImageComposer.swift */; };
 		2703EF9C1F6B7926004FA25E /* ImageEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2703EF9B1F6B7926004FA25E /* ImageEffect.swift */; };
 		2703EF9E1F758E8F004FA25E /* EffectListDS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2703EF9D1F758E8F004FA25E /* EffectListDS.swift */; };
+		2703EFA01F75D653004FA25E /* EffectCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2703EF9F1F75D653004FA25E /* EffectCell.swift */; };
 		276719541F63051600C2F934 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276719531F63051600C2F934 /* AppDelegate.swift */; };
 		276719561F63051600C2F934 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276719551F63051600C2F934 /* ViewController.swift */; };
 		276719591F63051600C2F934 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 276719571F63051600C2F934 /* Main.storyboard */; };
@@ -42,6 +43,7 @@
 		2703EF991F6A085A004FA25E /* ImageComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageComposer.swift; sourceTree = "<group>"; };
 		2703EF9B1F6B7926004FA25E /* ImageEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageEffect.swift; sourceTree = "<group>"; };
 		2703EF9D1F758E8F004FA25E /* EffectListDS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EffectListDS.swift; sourceTree = "<group>"; };
+		2703EF9F1F75D653004FA25E /* EffectCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EffectCell.swift; sourceTree = "<group>"; };
 		276719501F63051600C2F934 /* Double Exposure.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Double Exposure.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		276719531F63051600C2F934 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		276719551F63051600C2F934 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -110,10 +112,11 @@
 		276719521F63051600C2F934 /* Double Exposure */ = {
 			isa = PBXGroup;
 			children = (
+				2767195A1F63051600C2F934 /* Assets.xcassets */,
 				276719531F63051600C2F934 /* AppDelegate.swift */,
 				276719551F63051600C2F934 /* ViewController.swift */,
+				2703EF9F1F75D653004FA25E /* EffectCell.swift */,
 				276719571F63051600C2F934 /* Main.storyboard */,
-				2767195A1F63051600C2F934 /* Assets.xcassets */,
 				2767195C1F63051600C2F934 /* LaunchScreen.storyboard */,
 				2767195F1F63051600C2F934 /* Info.plist */,
 				2703EF991F6A085A004FA25E /* ImageComposer.swift */,
@@ -287,6 +290,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2703EFA01F75D653004FA25E /* EffectCell.swift in Sources */,
 				2703EF9C1F6B7926004FA25E /* ImageEffect.swift in Sources */,
 				2703EF9A1F6A085A004FA25E /* ImageComposer.swift in Sources */,
 				276719561F63051600C2F934 /* ViewController.swift in Sources */,
