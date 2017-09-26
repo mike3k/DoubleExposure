@@ -6,7 +6,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -21,18 +20,11 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <userGuides>
-                            <userLayoutGuide location="400" affinity="minY"/>
-                        </userGuides>
                         <subviews>
-                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uyf-7a-p6W">
-                                <rect key="frame" x="10" y="405" width="100" height="100"/>
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="top" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uyf-7a-p6W">
+                                <rect key="frame" x="6" y="462" width="100" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="uyf-7a-p6W" secondAttribute="height" multiplier="1:1" id="TLz-rx-Py3"/>
-                                    <constraint firstAttribute="height" constant="100" id="wMR-Zj-lGW"/>
-                                    <constraint firstAttribute="width" constant="100" id="xow-P1-wR7"/>
-                                </constraints>
                                 <state key="normal" title="Choose">
                                     <color key="titleShadowColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                                 </state>
@@ -40,20 +32,10 @@
                                     <action selector="tappedButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nPj-TB-0Sr"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" preservesSuperviewLayoutMargins="YES" layoutMarginsFollowReadableWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mUj-LU-lrZ">
-                                <rect key="frame" x="10" y="25" width="355" height="355"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="mUj-LU-lrZ" secondAttribute="height" multiplier="1:1" id="RB5-DQ-pmK"/>
-                                </constraints>
-                            </imageView>
-                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rDz-to-CRD">
-                                <rect key="frame" x="265" y="405" width="100" height="100"/>
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="top" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rDz-to-CRD">
+                                <rect key="frame" x="115" y="462" width="100" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="100" id="0bs-yf-xSJ"/>
-                                    <constraint firstAttribute="width" secondItem="rDz-to-CRD" secondAttribute="height" multiplier="1:1" id="uHw-Jt-9bp"/>
-                                    <constraint firstAttribute="width" constant="100" id="wh6-vU-L5d"/>
-                                </constraints>
                                 <state key="normal" title="Choose">
                                     <color key="titleShadowColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                                 </state>
@@ -61,21 +43,18 @@
                                     <action selector="tappedButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="HB3-Ww-UXP"/>
                                 </connections>
                             </button>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="4F8-vi-xLW">
-                                <rect key="frame" x="0.0" y="567" width="375" height="100"/>
-                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="100" id="Ixi-xC-yWE"/>
-                                </constraints>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="4F8-vi-xLW">
+                                <rect key="frame" x="5" y="570" width="365" height="100"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="nE2-IT-OFa">
                                     <size key="itemSize" width="80" height="80"/>
-                                    <size key="headerReferenceSize" width="10" height="10"/>
-                                    <size key="footerReferenceSize" width="10" height="10"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="41E-1m-BWm" customClass="EffectCell" customModule="Double_Exposure" customModuleProvider="target">
-                                        <rect key="frame" x="10" y="10" width="80" height="80"/>
+                                        <rect key="frame" x="0.0" y="10" width="80" height="80"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                             <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
@@ -101,35 +80,26 @@
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
-                                <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="0Lq-2E-kk8">
-                                    <rect key="frame" x="0.0" y="0.0" width="10" height="100"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </collectionReusableView>
-                                <collectionReusableView key="sectionFooterView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="gyQ-jt-jci">
-                                    <rect key="frame" x="90" y="0.0" width="10" height="100"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </collectionReusableView>
                                 <connections>
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="mc1-Cp-S24"/>
                                 </connections>
                             </collectionView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" preservesSuperviewLayoutMargins="YES" layoutMarginsFollowReadableWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mUj-LU-lrZ">
+                                <rect key="frame" x="6" y="6" width="364" height="416"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9xH-6C-HI5">
+                                <rect key="frame" x="309" y="464" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
+                                <state key="normal" title="Share">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="share:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mVS-rq-8fj"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="mUj-LU-lrZ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="0lU-oN-Hy7"/>
-                            <constraint firstAttribute="bottom" secondItem="4F8-vi-xLW" secondAttribute="bottom" id="2df-cD-z9p"/>
-                            <constraint firstItem="uyf-7a-p6W" firstAttribute="width" secondItem="rDz-to-CRD" secondAttribute="height" multiplier="1:1" id="5Dv-BS-Qdb"/>
-                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="uyf-7a-p6W" secondAttribute="trailing" constant="20" symbolic="YES" id="Bcg-ZV-JQr"/>
-                            <constraint firstAttribute="trailing" secondItem="4F8-vi-xLW" secondAttribute="trailing" id="FKi-oo-ejS"/>
-                            <constraint firstItem="mUj-LU-lrZ" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="5" id="KA0-zM-Bbm"/>
-                            <constraint firstItem="uyf-7a-p6W" firstAttribute="leading" secondItem="mUj-LU-lrZ" secondAttribute="leading" id="LmH-Cb-z8a"/>
-                            <constraint firstItem="uyf-7a-p6W" firstAttribute="top" secondItem="rDz-to-CRD" secondAttribute="top" id="Lu1-eN-7yQ"/>
-                            <constraint firstItem="rDz-to-CRD" firstAttribute="trailing" secondItem="mUj-LU-lrZ" secondAttribute="trailing" id="PTT-Cf-XuE"/>
-                            <constraint firstItem="rDz-to-CRD" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" symbolic="YES" id="RJt-yM-mWj"/>
-                            <constraint firstItem="uyf-7a-p6W" firstAttribute="top" secondItem="mUj-LU-lrZ" secondAttribute="bottom" constant="25" id="TlM-qa-Ccs"/>
-                            <constraint firstItem="mUj-LU-lrZ" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" constant="-20" id="dKf-a7-ond"/>
-                            <constraint firstItem="4F8-vi-xLW" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="yvQ-34-dKO"/>
-                        </constraints>
                     </view>
                     <connections>
                         <outlet property="collectionView" destination="4F8-vi-xLW" id="hCd-Ob-hNe"/>

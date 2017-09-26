@@ -12,8 +12,20 @@ import Photos
 class ViewController: UIViewController,
                         UIImagePickerControllerDelegate, UINavigationControllerDelegate,
                         UICollectionViewDelegate {
-    var leftImage: UIImage?
-    var rightImage: UIImage?
+    var leftImage: UIImage? {
+        didSet {
+            if (leftImage != oldValue) {
+                self.leftButton?.setBackgroundImage(self.leftImage, for: UIControlState.normal)
+            }
+        }
+    }
+    var rightImage: UIImage? {
+        didSet {
+            if (rightImage != oldValue) {
+                self.rightButton?.setBackgroundImage(self.rightImage, for: UIControlState.normal)
+            }
+        }
+    }
     
     var composedImage: UIImage?
     
@@ -40,7 +52,24 @@ class ViewController: UIViewController,
                 self.present(picker, animated: true, completion:nil)
            }
         }
-        
+    }
+    
+    @IBAction public func swapImages(_ button: UIButton) {
+        if (leftImage != nil && rightImage != nil) {
+            let temp = leftImage
+            leftImage = rightImage
+            rightImage = temp
+            
+            updateImage()
+        }
+    }
+    
+    @IBAction public func share(_ button: UIButton) {
+        if let image = composedImage {
+            let vc = UIActivityViewController(activityItems: [image], applicationActivities: [])
+            present(vc, animated: true, completion: nil)
+        }
+
     }
 
     override func viewDidLoad() {
@@ -64,7 +93,8 @@ class ViewController: UIViewController,
     }
 
     func updateImage() -> Void {
-        self.imageView?.image = ImageComposer.instance.compose(self.leftImage,self.rightImage)
+        self.composedImage = ImageComposer.instance.compose(self.leftImage,self.rightImage)
+        self.imageView?.image = self.composedImage
     }
     
     // image picker delegate
@@ -88,10 +118,8 @@ class ViewController: UIViewController,
             }
             if (self.buttonPressed === self.leftButton) {
                 self.leftImage = UIImage(data: data)
-                self.leftButton?.setImage(self.leftImage, for: UIControlState.normal)
             } else {
                 self.rightImage = UIImage(data: data)
-                self.rightButton?.setImage(self.rightImage, for: UIControlState.normal)
             }
             self.updateImage()
             
@@ -102,7 +130,6 @@ class ViewController: UIViewController,
     // collection view delegate
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        // TODO: handle selection
         let effect = dataSource[indexPath.row]
         ImageComposer.instance.setImageEffect(effect)
     }

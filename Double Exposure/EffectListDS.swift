@@ -14,7 +14,10 @@ class EffectListDS: NSObject, UICollectionViewDataSource {
                                      ImageEffect(name: "Overlay",mode: CGBlendMode.overlay,alpha: 1.0),
                                      ImageEffect(name: "Darken",mode: CGBlendMode.darken,alpha: 1.0),
                                      ImageEffect(name: "Lighten",mode: CGBlendMode.lighten,alpha: 1.0),
-                                     ImageEffect(name: "Difference",mode: CGBlendMode.difference,alpha: 1.0)]
+                                     ImageEffect(name: "Difference",mode: CGBlendMode.difference,alpha: 1.0),
+                                     ImageEffect(name: "Dodge", mode: CGBlendMode.colorDodge, alpha: 1.0),
+                                     ImageEffect(name: "Burn", mode: CGBlendMode.colorBurn, alpha: 1.0),
+    ]
 
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

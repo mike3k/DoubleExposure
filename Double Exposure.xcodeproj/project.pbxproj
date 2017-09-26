@@ -116,12 +116,12 @@
 				276719531F63051600C2F934 /* AppDelegate.swift */,
 				276719551F63051600C2F934 /* ViewController.swift */,
 				2703EF9F1F75D653004FA25E /* EffectCell.swift */,
-				276719571F63051600C2F934 /* Main.storyboard */,
-				2767195C1F63051600C2F934 /* LaunchScreen.storyboard */,
-				2767195F1F63051600C2F934 /* Info.plist */,
 				2703EF991F6A085A004FA25E /* ImageComposer.swift */,
 				2703EF9B1F6B7926004FA25E /* ImageEffect.swift */,
 				2703EF9D1F758E8F004FA25E /* EffectListDS.swift */,
+				276719571F63051600C2F934 /* Main.storyboard */,
+				2767195C1F63051600C2F934 /* LaunchScreen.storyboard */,
+				2767195F1F63051600C2F934 /* Info.plist */,
 			);
 			path = "Double Exposure";
 			sourceTree = "<group>";
