@@ -12,22 +12,30 @@ import Photos
 class ViewController: UIViewController,
                         UIImagePickerControllerDelegate, UINavigationControllerDelegate,
                         UICollectionViewDelegate {
+    
     var leftImage: UIImage? {
         didSet {
             if (leftImage != oldValue) {
-                self.leftButton?.setBackgroundImage(self.leftImage, for: UIControlState.normal)
-            }
-        }
-    }
-    var rightImage: UIImage? {
-        didSet {
-            if (rightImage != oldValue) {
-                self.rightButton?.setBackgroundImage(self.rightImage, for: UIControlState.normal)
+                leftButton?.setBackgroundImage(leftImage, for: UIControlState.normal)
             }
         }
     }
     
-    var composedImage: UIImage?
+    var rightImage: UIImage? {
+        didSet {
+            if (rightImage != oldValue) {
+                rightButton?.setBackgroundImage(rightImage, for: UIControlState.normal)
+            }
+        }
+    }
+    
+    var composedImage: UIImage? {
+        didSet {
+            if (composedImage != oldValue) {
+                imageView?.image = composedImage
+            }
+        }
+    }
     
     let dataSource = EffectListDS()
     
@@ -74,7 +82,6 @@ class ViewController: UIViewController,
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
         
         NotificationCenter.default.addObserver(forName: NSNotification.Name("mode-changed"), object: nil, queue: nil) { (n) in
                 self.updateImage()
@@ -94,7 +101,6 @@ class ViewController: UIViewController,
 
     func updateImage() -> Void {
         self.composedImage = ImageComposer.instance.compose(self.leftImage,self.rightImage)
-        self.imageView?.image = self.composedImage
     }
     
     // image picker delegate
@@ -106,6 +112,7 @@ class ViewController: UIViewController,
         guard let photoReferenceUrl = info[UIImagePickerControllerReferenceURL] as? URL else {
             return
         }
+        
         // Handle picking a Photo from the Photo Library
         let assets = PHAsset.fetchAssets(withALAssetURLs: [photoReferenceUrl], options: nil)
         let asset = assets.firstObject
