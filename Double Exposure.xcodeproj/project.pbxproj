@@ -59,6 +59,8 @@
 		276719751F63051600C2F934 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		276719821F63059C00C2F934 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
 		276719831F63059C00C2F934 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		27BF1E931F7C1439008A5F63 /* camera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = camera.png; sourceTree = "<group>"; };
+		27BF1E941F7C1472008A5F63 /* share.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = share.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +114,8 @@
 		276719521F63051600C2F934 /* Double Exposure */ = {
 			isa = PBXGroup;
 			children = (
+				27BF1E941F7C1472008A5F63 /* share.png */,
+				27BF1E931F7C1439008A5F63 /* camera.png */,
 				2767195A1F63051600C2F934 /* Assets.xcassets */,
 				276719531F63051600C2F934 /* AppDelegate.swift */,
 				276719551F63051600C2F934 /* ViewController.swift */,
