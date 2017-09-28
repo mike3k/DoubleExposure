@@ -45,6 +45,7 @@ class ViewController: UIViewController,
     
     @IBOutlet weak var leftButton: UIButton?
     @IBOutlet weak var rightButton: UIButton?
+    @IBOutlet weak var shareButton: UIButton?
     
     var buttonPressed: UIButton?
         
@@ -80,6 +81,15 @@ class ViewController: UIViewController,
 
     }
 
+    private func configureButton(_ button: UIButton?) {
+        if let b=button {
+            let layer = b.layer
+            layer.borderWidth = 0.5
+            layer.cornerRadius = 5
+            layer.borderColor = UIColor.white.cgColor
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -92,6 +102,10 @@ class ViewController: UIViewController,
         }
         
         collectionView?.dataSource = dataSource
+        
+        configureButton(leftButton)
+        configureButton(rightButton)
+        configureButton(shareButton)
     }
 
     override func didReceiveMemoryWarning() {

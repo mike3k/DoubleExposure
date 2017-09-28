@@ -21,11 +21,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="top" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rDz-to-CRD">
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rDz-to-CRD">
                                 <rect key="frame" x="89" y="498" width="65" height="65"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                <state key="normal" image="camera.png">
+                                <state key="normal" title="+">
                                     <color key="titleShadowColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                                 </state>
                                 <connections>
@@ -87,11 +86,10 @@
                                     <action selector="share:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mVS-rq-8fj"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="top" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uyf-7a-p6W">
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uyf-7a-p6W">
                                 <rect key="frame" x="12" y="497" width="65" height="65"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                <state key="normal" image="camera.png">
+                                <state key="normal" title="+">
                                     <color key="titleShadowColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                                 </state>
                                 <connections>
@@ -106,6 +104,7 @@
                         <outlet property="imageView" destination="mUj-LU-lrZ" id="9EZ-kp-f84"/>
                         <outlet property="leftButton" destination="uyf-7a-p6W" id="6nU-tR-Rmx"/>
                         <outlet property="rightButton" destination="rDz-to-CRD" id="3sU-wx-wqd"/>
+                        <outlet property="shareButton" destination="9xH-6C-HI5" id="XK2-vX-VNF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -114,7 +113,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="camera.png" width="50" height="50"/>
         <image name="share.png" width="47" height="64"/>
     </resources>
 </document>
