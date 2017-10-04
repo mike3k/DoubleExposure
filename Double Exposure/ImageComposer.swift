@@ -45,7 +45,10 @@ class ImageComposer: NSObject {
     }
     
     func blend(_ image1 : UIImage, _ image2 : UIImage) -> UIImage {
-        
+        return blend(image1,image2,mode:self.mode,alpha:self.alpha)
+    }
+    
+    func blend(_ image1 : UIImage, _ image2 : UIImage, mode: CGBlendMode, alpha: CGFloat) -> UIImage {
         let newSize = image1.size
         UIGraphicsBeginImageContext( newSize )
         

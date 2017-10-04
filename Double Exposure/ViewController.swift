@@ -13,6 +13,8 @@ class ViewController: UIViewController,
                         UIImagePickerControllerDelegate, UINavigationControllerDelegate,
                         UICollectionViewDelegate {
     
+    var showCameraOnStartup = true
+    
     var leftImage: UIImage? {
         didSet {
             if (leftImage != oldValue) {
@@ -52,12 +54,27 @@ class ViewController: UIViewController,
     @IBAction public func tappedButton(_ button: UIButton) {
         buttonPressed = button
         
+        let alertController = UIAlertController(title: "Choose a photo",
+                                                message: "Take a picture or choose from library",
+                                                preferredStyle: UIAlertControllerStyle.actionSheet)
+        alertController.addAction(UIAlertAction(title: "Camera", style: UIAlertActionStyle.default,
+                                                handler: { (action) in
+                                                    self.ChooseImage(source: .camera)
+        }))
+        alertController.addAction(UIAlertAction(title: "Choose from library",
+                                                style: UIAlertActionStyle.default,
+                                                handler: { (action) in
+                                                    self.ChooseImage(source: .photoLibrary)
+        }))
+        self.present(alertController,animated: true,completion: nil)
+    }
+    
+    func ChooseImage(source: UIImagePickerControllerSourceType = .photoLibrary) {
         PHPhotoLibrary.requestAuthorization { (auth) in
             if (auth == PHAuthorizationStatus.authorized) {
                 let picker = UIImagePickerController()
                 picker.delegate = self
-                picker.sourceType = UIImagePickerControllerSourceType.photoLibrary
-                
+                picker.sourceType = source
                 self.present(picker, animated: true, completion:nil)
            }
         }
@@ -86,7 +103,7 @@ class ViewController: UIViewController,
             let layer = b.layer
             layer.borderWidth = 0.5
             layer.cornerRadius = 5
-            layer.borderColor = UIColor.white.cgColor
+            layer.borderColor = UIColor.lightGray.cgColor
         }
     }
     
@@ -94,18 +111,30 @@ class ViewController: UIViewController,
         super.viewDidLoad()
         
         NotificationCenter.default.addObserver(forName: NSNotification.Name("mode-changed"), object: nil, queue: nil) { (n) in
-                self.updateImage()
+//                self.updateImage()
         }
         
         NotificationCenter.default.addObserver(forName: NSNotification.Name("alpha-changed"), object: nil, queue: nil) { (n) in
-                self.updateImage()
+//                self.updateImage()
         }
         
         collectionView?.dataSource = dataSource
         
+        if let layer = imageView?.layer {
+            layer.borderWidth = 0.25
+            layer.borderColor = UIColor.lightGray.cgColor
+        }
+        
         configureButton(leftButton)
         configureButton(rightButton)
-        configureButton(shareButton)
+//        configureButton(shareButton)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        if (showCameraOnStartup) {
+            showCameraOnStartup  = false
+            tappedButton(leftButton!)
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -117,35 +146,57 @@ class ViewController: UIViewController,
         self.composedImage = ImageComposer.instance.compose(self.leftImage,self.rightImage)
     }
     
+    private func saveimage(_ image: UIImage?) {
+        
+        if (buttonPressed === leftButton) {
+            leftImage = image
+        } else {
+            rightImage = image
+        }
+        
+        updateImage()
+    }
+    
     // image picker delegate
     func imagePickerController(_ picker: UIImagePickerController,
                                didFinishPickingMediaWithInfo info: [String : Any]) {
         
         picker.dismiss(animated: true, completion:nil)
         
-        guard let photoReferenceUrl = info[UIImagePickerControllerReferenceURL] as? URL else {
+        if #available(iOS 11.0, *) {
+            if let imageUrl = info[UIImagePickerControllerImageURL] as? URL {
+                if let data = try? Data(contentsOf: imageUrl) {
+                    self.saveimage(UIImage(data: data))
+                    return
+                }
+            }
+        }
+        
+        if let image = info[UIImagePickerControllerEditedImage] as? UIImage {
+            self.saveimage(image)
             return
         }
         
-        // Handle picking a Photo from the Photo Library
-        let assets = PHAsset.fetchAssets(withALAssetURLs: [photoReferenceUrl], options: nil)
-        let asset = assets.firstObject
-        asset?.requestContentEditingInput(with: nil, completionHandler: { (contentEditingInput, info) in
-            guard let url = contentEditingInput?.fullSizeImageURL else {
-                return
-            }
-            guard let data = try? Data(contentsOf: url) else {
-                return
-            }
-            if (self.buttonPressed === self.leftButton) {
-                self.leftImage = UIImage(data: data)
-            } else {
-                self.rightImage = UIImage(data: data)
-            }
-            self.updateImage()
-            
-        })
+        if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
+            self.saveimage(image)
+            return
+       }
         
+        if let photoReferenceUrl = info[UIImagePickerControllerReferenceURL] as? URL {
+        
+            // Handle picking a Photo from the Photo Library
+            let assets = PHAsset.fetchAssets(withALAssetURLs: [photoReferenceUrl], options: nil)
+            let asset = assets.firstObject
+            asset?.requestContentEditingInput(with: nil, completionHandler: { (contentEditingInput, info) in
+                guard let url = contentEditingInput?.fullSizeImageURL else {
+                    return
+                }
+                guard let data = try? Data(contentsOf: url) else {
+                    return
+                }
+                self.saveimage(UIImage(data: data))
+            })
+        }
     }
     
     // collection view delegate
@@ -153,6 +204,7 @@ class ViewController: UIViewController,
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let effect = dataSource[indexPath.row]
         ImageComposer.instance.setImageEffect(effect)
+        updateImage()
     }
     
     // collection view data source

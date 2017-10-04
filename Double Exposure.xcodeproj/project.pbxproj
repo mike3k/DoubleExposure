@@ -20,6 +20,9 @@
 		276719741F63051600C2F934 /* Double_ExposureUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276719731F63051600C2F934 /* Double_ExposureUITests.swift */; };
 		276719841F63059C00C2F934 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 276719821F63059C00C2F934 /* AssetsLibrary.framework */; };
 		276719851F63059C00C2F934 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 276719831F63059C00C2F934 /* AVFoundation.framework */; };
+		2781D59C1F849C870075D259 /* share.png in Resources */ = {isa = PBXBuildFile; fileRef = 27BF1E941F7C1472008A5F63 /* share.png */; };
+		2781D59D1F849C8B0075D259 /* camera.png in Resources */ = {isa = PBXBuildFile; fileRef = 27BF1E931F7C1439008A5F63 /* camera.png */; };
+		27BF1E961F8436A3008A5F63 /* CameraScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BF1E951F8436A3008A5F63 /* CameraScreen.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +64,7 @@
 		276719831F63059C00C2F934 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		27BF1E931F7C1439008A5F63 /* camera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = camera.png; sourceTree = "<group>"; };
 		27BF1E941F7C1472008A5F63 /* share.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = share.png; sourceTree = "<group>"; };
+		27BF1E951F8436A3008A5F63 /* CameraScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraScreen.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +125,7 @@
 				276719551F63051600C2F934 /* ViewController.swift */,
 				2703EF9F1F75D653004FA25E /* EffectCell.swift */,
 				2703EF991F6A085A004FA25E /* ImageComposer.swift */,
+				27BF1E951F8436A3008A5F63 /* CameraScreen.swift */,
 				2703EF9B1F6B7926004FA25E /* ImageEffect.swift */,
 				2703EF9D1F758E8F004FA25E /* EffectListDS.swift */,
 				276719571F63051600C2F934 /* Main.storyboard */,
@@ -270,6 +275,8 @@
 				2767195E1F63051600C2F934 /* LaunchScreen.storyboard in Resources */,
 				2767195B1F63051600C2F934 /* Assets.xcassets in Resources */,
 				276719591F63051600C2F934 /* Main.storyboard in Resources */,
+				2781D59C1F849C870075D259 /* share.png in Resources */,
+				2781D59D1F849C8B0075D259 /* camera.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -296,6 +303,7 @@
 			files = (
 				2703EFA01F75D653004FA25E /* EffectCell.swift in Sources */,
 				2703EF9C1F6B7926004FA25E /* ImageEffect.swift in Sources */,
+				27BF1E961F8436A3008A5F63 /* CameraScreen.swift in Sources */,
 				2703EF9A1F6A085A004FA25E /* ImageComposer.swift in Sources */,
 				276719561F63051600C2F934 /* ViewController.swift in Sources */,
 				2703EF9E1F758E8F004FA25E /* EffectListDS.swift in Sources */,
