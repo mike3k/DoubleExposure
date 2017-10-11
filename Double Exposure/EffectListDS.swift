@@ -10,6 +10,17 @@ import UIKit
 
 class EffectListDS: NSObject, UICollectionViewDataSource {
 
+    var selectedItem : Int = -1 {
+        didSet {
+            // deselect item
+        }
+        willSet {
+            if (newValue != selectedItem) {
+                // highlight selected item
+            }
+        }
+    }
+    
     private let effects: [ImageEffect] = [ImageEffect(name: "Normal",mode: CGBlendMode.normal,alpha: 0.5),
                                      ImageEffect(name: "Overlay",mode: CGBlendMode.overlay,alpha: 1.0),
                                      ImageEffect(name: "Darken",mode: CGBlendMode.darken,alpha: 1.0),
@@ -32,7 +43,11 @@ class EffectListDS: NSObject, UICollectionViewDataSource {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! EffectCell
         // TODO: configure cell
         let effect = effects[indexPath.row]
-        cell.backgroundColor = UIColor.white
+        if (indexPath.row == selectedItem) {
+            cell.backgroundColor = UIColor.lightGray
+        } else {
+            cell.backgroundColor = UIColor.white
+        }
         cell.label?.text = effect.name
         cell.imageView?.image = UIImage.init(named: effect.name)
         return cell

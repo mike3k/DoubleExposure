@@ -201,10 +201,21 @@ class ViewController: UIViewController,
     
     // collection view delegate
     
+    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
+        dataSource.selectedItem = -1
+        collectionView.reloadItems(at:[indexPath] )
+    }
+    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let effect = dataSource[indexPath.row]
+        var indexPaths = [indexPath]
+        if (dataSource.selectedItem >= 0) {
+            indexPaths.append(IndexPath(row:dataSource.selectedItem,section:0))
+        }
+        dataSource.selectedItem = indexPath.row
         ImageComposer.instance.setImageEffect(effect)
         updateImage()
+        collectionView.reloadItems(at:indexPaths )
     }
     
     // collection view data source
