@@ -13,7 +13,7 @@ class ViewController: UIViewController,
                         UIImagePickerControllerDelegate, UINavigationControllerDelegate,
                         UICollectionViewDelegate {
     
-    var showCameraOnStartup = true
+    var showCameraOnStartup = false
     
     var leftImage: UIImage? {
         didSet {
@@ -48,6 +48,7 @@ class ViewController: UIViewController,
     @IBOutlet weak var leftButton: UIButton?
     @IBOutlet weak var rightButton: UIButton?
     @IBOutlet weak var shareButton: UIButton?
+    @IBOutlet weak var swapButton: UIButton?
     
     var buttonPressed: UIButton?
         
@@ -66,6 +67,7 @@ class ViewController: UIViewController,
                                                 handler: { (action) in
                                                     self.ChooseImage(source: .photoLibrary)
         }))
+        alertController.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel, handler: nil))
         self.present(alertController,animated: true,completion: nil)
     }
     

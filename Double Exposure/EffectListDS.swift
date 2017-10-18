@@ -25,9 +25,16 @@ class EffectListDS: NSObject, UICollectionViewDataSource {
                                      ImageEffect(name: "Overlay",mode: CGBlendMode.overlay,alpha: 1.0),
                                      ImageEffect(name: "Darken",mode: CGBlendMode.darken,alpha: 1.0),
                                      ImageEffect(name: "Lighten",mode: CGBlendMode.lighten,alpha: 1.0),
+                                     ImageEffect(name: "Multiply", mode: CGBlendMode.multiply, alpha: 1.0),
                                      ImageEffect(name: "Difference",mode: CGBlendMode.difference,alpha: 1.0),
                                      ImageEffect(name: "Dodge", mode: CGBlendMode.colorDodge, alpha: 1.0),
                                      ImageEffect(name: "Burn", mode: CGBlendMode.colorBurn, alpha: 1.0),
+                                     ImageEffect(name: "Screen", mode: CGBlendMode.screen, alpha: 1.0),
+                                     ImageEffect(name: "Hue", mode: CGBlendMode.hue, alpha: 1.0),
+                                     ImageEffect(name: "Saturation", mode: CGBlendMode.saturation, alpha: 1.0),
+                                     ImageEffect(name: "Luminosity", mode: CGBlendMode.luminosity, alpha: 1.0),
+                                     ImageEffect(name: "Color", mode: CGBlendMode.color, alpha: 1.0),
+
     ]
 
 

@@ -5,7 +5,7 @@
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -117,6 +117,16 @@
                                     <action selector="tappedButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nPj-TB-0Sr"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Trn-4o-ddF">
+                                <rect key="frame" x="175" y="517" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <state key="normal" title="Swap">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="swapImages:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2RO-Kw-rte"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                     </view>
@@ -126,6 +136,7 @@
                         <outlet property="leftButton" destination="uyf-7a-p6W" id="6nU-tR-Rmx"/>
                         <outlet property="rightButton" destination="rDz-to-CRD" id="3sU-wx-wqd"/>
                         <outlet property="shareButton" destination="9xH-6C-HI5" id="XK2-vX-VNF"/>
+                        <outlet property="swapButton" destination="Trn-4o-ddF" id="Veq-ov-4UN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -134,6 +145,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="share.png" width="47" height="64"/>
+        <image name="share.png" width="24" height="32"/>
     </resources>
 </document>
