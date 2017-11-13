@@ -49,14 +49,17 @@ class ImageComposer: NSObject {
     }
     
     func blend(_ image1 : UIImage, _ image2 : UIImage, mode: CGBlendMode, alpha: CGFloat) -> UIImage {
-        let newSize = image1.size
-        UIGraphicsBeginImageContext( newSize )
+        let size1 = image1.size, size2 = image2.size;
+        var rect : CGRect
+        if (size1.width < size2.width || size1.height < size2.height) {
+            rect = CGRect(x: 0, y: 0, width: size1.width, height: size1.height)
+        } else {
+            rect = CGRect(x: 0, y: 0, width: size2.width, height: size2.height)
+        }
         
-        image1.draw(in: CGRect(x:0,y:0,width:newSize.width,height:newSize.height))
-        
-        image2.draw(in: CGRect(x:0,y:0,width:newSize.width,height:newSize.height),
-                    blendMode:mode, alpha:alpha)
-        
+        UIGraphicsBeginImageContext( rect.size )
+        image1.draw(in: rect)
+        image2.draw(in: rect, blendMode:mode, alpha:alpha)
         let newImage:UIImage = UIGraphicsGetImageFromCurrentImageContext()!
         UIGraphicsEndImageContext();
         

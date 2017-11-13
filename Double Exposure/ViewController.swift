@@ -129,7 +129,6 @@ class ViewController: UIViewController,
         
         configureButton(leftButton)
         configureButton(rightButton)
-//        configureButton(shareButton)
     }
     
     override func viewDidAppear(_ animated: Bool) {
