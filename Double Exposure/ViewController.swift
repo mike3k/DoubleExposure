@@ -122,10 +122,10 @@ class ViewController: UIViewController,
         
         collectionView?.dataSource = dataSource
         
-        if let layer = imageView?.layer {
-            layer.borderWidth = 0.25
-            layer.borderColor = UIColor.lightGray.cgColor
-        }
+
+        if #available(iOS 11.0, *) {
+            self.view.accessibilityIgnoresInvertColors = true
+        };
         
         configureButton(leftButton)
         configureButton(rightButton)
