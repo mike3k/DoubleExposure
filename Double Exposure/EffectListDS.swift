@@ -25,8 +25,8 @@ class EffectListDS: NSObject, UICollectionViewDataSource {
                                      ImageEffect(name: "Overlay",mode: CGBlendMode.overlay,alpha: 1.0),
                                      ImageEffect(name: "Darken",mode: CGBlendMode.darken,alpha: 1.0),
                                      ImageEffect(name: "Lighten",mode: CGBlendMode.lighten,alpha: 1.0),
-                                     ImageEffect(name: "Multiply", mode: CGBlendMode.multiply, alpha: 1.0),
-                                     ImageEffect(name: "Difference",mode: CGBlendMode.difference,alpha: 1.0),
+                                     ImageEffect(name: "Mult", mode: CGBlendMode.multiply, alpha: 1.0),
+                                     ImageEffect(name: "Diff",mode: CGBlendMode.difference,alpha: 1.0),
                                      ImageEffect(name: "Dodge", mode: CGBlendMode.colorDodge, alpha: 1.0),
                                      ImageEffect(name: "Burn", mode: CGBlendMode.colorBurn, alpha: 1.0),
                                      ImageEffect(name: "Screen", mode: CGBlendMode.screen, alpha: 1.0),
@@ -56,6 +56,8 @@ class EffectListDS: NSObject, UICollectionViewDataSource {
             cell.backgroundColor = UIColor.white
         }
         cell.label?.text = effect.name
+        cell.label?.textColor = UIColor.white;
+        cell.label?.textAlignment = .center;
         cell.imageView?.image = UIImage.init(named: effect.name)
         return cell
     }
