@@ -39,8 +39,10 @@ class ImageComposer: NSObject {
             return image1
         } else if (image2 != nil) && (image1 == nil) {
             return image2
-        } else {
+        } else if (image1 != nil) && (image2 != nil) {
             return blend(image1!,image2!)
+        } else {
+            return nil;
         }
     }
     

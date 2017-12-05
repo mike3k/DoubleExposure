@@ -204,19 +204,35 @@ class ViewController: UIViewController,
     
     func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
         dataSource.selectedItem = -1
-        collectionView.reloadItems(at:[indexPath] )
+
+        if (indexPath.row >= 0 && indexPath.row < dataSource.count()) {
+            if let cell = collectionView.cellForItem(at: indexPath) as? EffectCell {
+                cell.isSelected = false;
+                cell.highlight()
+                cell.setNeedsDisplay();
+            }
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let effect = dataSource[indexPath.row]
-        var indexPaths = [indexPath]
-        if (dataSource.selectedItem >= 0) {
-            indexPaths.append(IndexPath(row:dataSource.selectedItem,section:0))
+        if (dataSource.selectedItem >= 0 && dataSource.selectedItem != indexPath.row) {
+            let oldSelection = IndexPath(row:dataSource.selectedItem,section:0)
+            if let oldcell = collectionView.cellForItem(at: oldSelection) as? EffectCell {
+                oldcell.isSelected = false
+                oldcell.highlight();
+                oldcell.setNeedsDisplay();
+            }
         }
+        
         dataSource.selectedItem = indexPath.row
+
+        let cell = collectionView.cellForItem(at: indexPath) as! EffectCell
+        cell.isSelected = true;
+        cell.highlight()
+
+        let effect = dataSource[indexPath.row]
         ImageComposer.instance.setImageEffect(effect)
         updateImage()
-        collectionView.reloadItems(at:indexPaths )
     }
     
     // collection view data source
