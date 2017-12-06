@@ -208,7 +208,6 @@ class ViewController: UIViewController,
         if (indexPath.row >= 0 && indexPath.row < dataSource.count()) {
             if let cell = collectionView.cellForItem(at: indexPath) as? EffectCell {
                 cell.isSelected = false;
-                cell.highlight()
                 cell.setNeedsDisplay();
             }
         }
@@ -219,7 +218,6 @@ class ViewController: UIViewController,
             let oldSelection = IndexPath(row:dataSource.selectedItem,section:0)
             if let oldcell = collectionView.cellForItem(at: oldSelection) as? EffectCell {
                 oldcell.isSelected = false
-                oldcell.highlight();
                 oldcell.setNeedsDisplay();
             }
         }
@@ -228,7 +226,6 @@ class ViewController: UIViewController,
 
         let cell = collectionView.cellForItem(at: indexPath) as! EffectCell
         cell.isSelected = true;
-        cell.highlight()
 
         let effect = dataSource[indexPath.row]
         ImageComposer.instance.setImageEffect(effect)

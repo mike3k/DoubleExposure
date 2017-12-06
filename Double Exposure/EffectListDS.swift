@@ -53,14 +53,14 @@ class EffectListDS: NSObject, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! EffectCell
-        // TODO: configure cell
+
         let effect = effects[indexPath.row]
         cell.isSelected = (indexPath.row == selectedItem)
         cell.label?.text = effect.name
         cell.label?.textColor = UIColor.white;
         cell.label?.textAlignment = .center;
         cell.imageView?.image = UIImage.init(named: effect.name)
-        cell.highlight()
+        
         return cell
     }
 
