@@ -10,17 +10,7 @@ import UIKit
 
 class EffectListDS: NSObject, UICollectionViewDataSource {
 
-    var selectedItem : Int = -1
-//    {
-//        didSet {
-//            // highlight selected item
-//        }
-//        willSet {
-//            if (newValue != selectedItem) {
-//                // deselect item
-//            }
-//        }
-//    }
+    var selectedItem : Int = 0
     
     private let effects: [ImageEffect] = [ImageEffect(name: "Normal",mode: CGBlendMode.normal,alpha: 0.5),
                                      ImageEffect(name: "Overlay",mode: CGBlendMode.overlay,alpha: 1.0),

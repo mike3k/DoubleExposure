@@ -15,6 +15,19 @@ class ViewController: UIViewController,
     
     var showCameraOnStartup = false
     
+    let dataSource = EffectListDS()
+    
+    @IBOutlet weak var imageView: UIImageView?
+    
+    @IBOutlet weak var collectionView: UICollectionView?
+    
+    @IBOutlet weak var leftButton: UIButton?
+    @IBOutlet weak var rightButton: UIButton?
+    @IBOutlet weak var shareButton: UIButton?
+    @IBOutlet weak var swapButton: UIButton?
+    
+    var buttonPressed: UIButton?
+
     var leftImage: UIImage? {
         didSet {
             if (leftImage != oldValue) {
@@ -39,19 +52,7 @@ class ViewController: UIViewController,
         }
     }
     
-    let dataSource = EffectListDS()
     
-    @IBOutlet weak var imageView: UIImageView?
-
-    @IBOutlet weak var collectionView: UICollectionView?
-    
-    @IBOutlet weak var leftButton: UIButton?
-    @IBOutlet weak var rightButton: UIButton?
-    @IBOutlet weak var shareButton: UIButton?
-    @IBOutlet weak var swapButton: UIButton?
-    
-    var buttonPressed: UIButton?
-        
     @IBAction public func tappedButton(_ button: UIButton) {
         buttonPressed = button
         
