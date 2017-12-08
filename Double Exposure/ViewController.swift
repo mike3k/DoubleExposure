@@ -52,6 +52,11 @@ class ViewController: UIViewController,
         }
     }
     
+    @IBAction public func clear(_ button: UIButton) {
+        self.leftImage = nil;
+        self.rightImage = nil;
+        self.composedImage = nil;
+    }
     
     @IBAction public func tappedButton(_ button: UIButton) {
         buttonPressed = button
@@ -96,6 +101,14 @@ class ViewController: UIViewController,
     @IBAction public func share(_ button: UIButton) {
         if let image = composedImage {
             let vc = UIActivityViewController(activityItems: [image], applicationActivities: [])
+            vc.completionWithItemsHandler = { (activityType: UIActivityType?,
+                                                completed: Bool,
+                                                returnedItems: [Any]?,
+                                                error: Error?) -> Void in
+                if completed == true {
+                    self.showToast(message: "Done")
+                }
+            }
             present(vc, animated: true, completion: nil)
         }
 
@@ -121,9 +134,10 @@ class ViewController: UIViewController,
 //                self.updateImage()
         }
         
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(share))
+            
         collectionView?.dataSource = dataSource
         
-
         if #available(iOS 11.0, *) {
             self.view.accessibilityIgnoresInvertColors = true
         };
