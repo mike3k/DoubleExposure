@@ -29,9 +29,13 @@ class ImageComposer: NSObject {
         }
     }
     
-    func setImageEffect(_ effect : ImageEffect) -> Void {
-        self.mode = effect.mode
-        self.alpha = effect.alpha
+    var imageEffect: ImageEffect? {
+        didSet {
+            if let imageEffect = imageEffect {
+                self.mode = imageEffect.mode
+                self.alpha = imageEffect.alpha
+            }
+        }
     }
     
     func compose(_ image1 : UIImage?, _ image2 : UIImage?) -> UIImage? {

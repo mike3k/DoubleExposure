@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  MainViewController.swift
 //  Double Exposure
 //
 //  Created by Mike Cohen on 9/8/17.
@@ -9,7 +9,7 @@
 import UIKit
 import Photos
 
-class ViewController: UIViewController,
+class MainViewController: UIViewController,
                         UIImagePickerControllerDelegate, UINavigationControllerDelegate,
                         UICollectionViewDelegate {
     
@@ -243,7 +243,7 @@ class ViewController: UIViewController,
         cell.isSelected = true;
 
         let effect = dataSource[indexPath.row]
-        ImageComposer.instance.setImageEffect(effect)
+        ImageComposer.instance.imageEffect = effect
         updateImage()
     }
     

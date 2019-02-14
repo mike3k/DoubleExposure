@@ -66,7 +66,7 @@ class CameraScreen: UIViewController, UIImagePickerControllerDelegate, UINavigat
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
-        let vc = segue.destination as? ViewController
+        let vc = segue.destination as? MainViewController
         vc?.leftImage = self.image
     }
     
