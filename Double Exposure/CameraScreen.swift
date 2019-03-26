@@ -22,7 +22,7 @@ class CameraScreen: UIViewController, UIImagePickerControllerDelegate, UINavigat
         if (shouldShowCamera) {
             let picker = UIImagePickerController()
             picker.delegate = self
-            picker.sourceType = UIImagePickerControllerSourceType.savedPhotosAlbum
+            picker.sourceType = UIImagePickerController.SourceType.savedPhotosAlbum
             
             self.present(picker, animated: true, completion:nil)
             shouldShowCamera = false
@@ -34,12 +34,11 @@ class CameraScreen: UIViewController, UIImagePickerControllerDelegate, UINavigat
         // Dispose of any resources that can be recreated.
     }
     
-    func imagePickerController(_ picker: UIImagePickerController,
-                               didFinishPickingMediaWithInfo info: [String : Any]) {
-        
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+
         picker.dismiss(animated: true, completion:nil)
         
-        guard let photoReferenceUrl = info[UIImagePickerControllerReferenceURL] as? URL else {
+        guard let photoReferenceUrl = info[UIImagePickerController.InfoKey.referenceURL] as? URL else {
             return
         }
         

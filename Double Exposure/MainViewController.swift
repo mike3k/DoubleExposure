@@ -31,7 +31,7 @@ class MainViewController: UIViewController,
     var leftImage: UIImage? {
         didSet {
             if (leftImage != oldValue) {
-                leftButton?.setBackgroundImage(leftImage, for: UIControlState.normal)
+                leftButton?.setBackgroundImage(leftImage, for: UIControl.State.normal)
             }
         }
     }
@@ -39,7 +39,7 @@ class MainViewController: UIViewController,
     var rightImage: UIImage? {
         didSet {
             if (rightImage != oldValue) {
-                rightButton?.setBackgroundImage(rightImage, for: UIControlState.normal)
+                rightButton?.setBackgroundImage(rightImage, for: UIControl.State.normal)
             }
         }
     }
@@ -63,21 +63,21 @@ class MainViewController: UIViewController,
         
         let alertController = UIAlertController(title: "Choose a photo",
                                                 message: "Take a picture or choose from library",
-                                                preferredStyle: UIAlertControllerStyle.actionSheet)
-        alertController.addAction(UIAlertAction(title: "Camera", style: UIAlertActionStyle.default,
+                                                preferredStyle: UIAlertController.Style.actionSheet)
+        alertController.addAction(UIAlertAction(title: "Camera", style: UIAlertAction.Style.default,
                                                 handler: { (action) in
                                                     self.ChooseImage(source: .camera)
         }))
         alertController.addAction(UIAlertAction(title: "Choose from library",
-                                                style: UIAlertActionStyle.default,
+                                                style: UIAlertAction.Style.default,
                                                 handler: { (action) in
                                                     self.ChooseImage(source: .photoLibrary)
         }))
-        alertController.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel, handler: nil))
+        alertController.addAction(UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel, handler: nil))
         self.present(alertController,animated: true,completion: nil)
     }
     
-    func ChooseImage(source: UIImagePickerControllerSourceType = .photoLibrary) {
+    func ChooseImage(source: UIImagePickerController.SourceType = .photoLibrary) {
         PHPhotoLibrary.requestAuthorization { (auth) in
             if (auth == PHAuthorizationStatus.authorized) {
                 let picker = UIImagePickerController()
@@ -101,7 +101,7 @@ class MainViewController: UIViewController,
     @IBAction public func share(_ button: UIButton) {
         if let image = composedImage {
             let vc = UIActivityViewController(activityItems: [image], applicationActivities: [])
-            vc.completionWithItemsHandler = { (activityType: UIActivityType?,
+            vc.completionWithItemsHandler = { (activityType: UIActivity.ActivityType?,
                                                 completed: Bool,
                                                 returnedItems: [Any]?,
                                                 error: Error?) -> Void in
@@ -174,45 +174,17 @@ class MainViewController: UIViewController,
     }
     
     // image picker delegate
-    func imagePickerController(_ picker: UIImagePickerController,
-                               didFinishPickingMediaWithInfo info: [String : Any]) {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         
         picker.dismiss(animated: true, completion:nil)
         
-        if #available(iOS 11.0, *) {
-            if let imageUrl = info[UIImagePickerControllerImageURL] as? URL {
-                if let data = try? Data(contentsOf: imageUrl) {
-                    self.saveimage(UIImage(data: data))
-                    return
-                }
+        if let imageUrl = info[UIImagePickerController.InfoKey.imageURL] as? URL {
+            if let data = try? Data(contentsOf: imageUrl) {
+                self.saveimage(UIImage(data: data))
+                return
             }
         }
         
-        if let image = info[UIImagePickerControllerEditedImage] as? UIImage {
-            self.saveimage(image)
-            return
-        }
-        
-        if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
-            self.saveimage(image)
-            return
-       }
-        
-        if let photoReferenceUrl = info[UIImagePickerControllerReferenceURL] as? URL {
-        
-            // Handle picking a Photo from the Photo Library
-            let assets = PHAsset.fetchAssets(withALAssetURLs: [photoReferenceUrl], options: nil)
-            let asset = assets.firstObject
-            asset?.requestContentEditingInput(with: nil, completionHandler: { (contentEditingInput, info) in
-                guard let url = contentEditingInput?.fullSizeImageURL else {
-                    return
-                }
-                guard let data = try? Data(contentsOf: url) else {
-                    return
-                }
-                self.saveimage(UIImage(data: data))
-            })
-        }
     }
     
     // collection view delegate
