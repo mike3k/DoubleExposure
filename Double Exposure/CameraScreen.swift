@@ -38,7 +38,7 @@ class CameraScreen: UIViewController, UIImagePickerControllerDelegate, UINavigat
 
         picker.dismiss(animated: true, completion:nil)
         
-        guard let photoReferenceUrl = info[UIImagePickerController.InfoKey.referenceURL] as? URL else {
+        guard let photoReferenceUrl = info[UIImagePickerController.InfoKey.phAsset] as? URL else {
             return
         }
         

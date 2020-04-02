@@ -9,9 +9,9 @@
 import UIKit
 
 struct ImageEffect {
-    var name : String
-    var mode : CGBlendMode
-    var alpha : CGFloat
+    let name : String
+    let mode : CGBlendMode
+    let alpha : CGFloat
     var icon : UIImage?
     
     init(name : String, mode : CGBlendMode, alpha : CGFloat) {

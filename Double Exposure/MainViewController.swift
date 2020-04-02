@@ -80,10 +80,12 @@ class MainViewController: UIViewController,
     func ChooseImage(source: UIImagePickerController.SourceType = .photoLibrary) {
         PHPhotoLibrary.requestAuthorization { (auth) in
             if (auth == PHAuthorizationStatus.authorized) {
-                let picker = UIImagePickerController()
-                picker.delegate = self
-                picker.sourceType = source
-                self.present(picker, animated: true, completion:nil)
+                DispatchQueue.main.async {
+                    let picker = UIImagePickerController()
+                    picker.delegate = self
+                    picker.sourceType = source
+                    self.present(picker, animated: true, completion:nil)
+                }
            }
         }
     }
